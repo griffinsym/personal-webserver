@@ -1,0 +1,262 @@
+/* Color Palette */
+:root {
+    --dark-green: #627254;
+    --light-green: #76885B;
+    --dark-grey: #DDDDDD;
+    --light-grey: #EEEEEE;
+    --white: #FFFFFF;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* background-color: var(--light-green); */
+	background-image: url("files/background.jpg");
+    background-size: cover;       /* Make it cover the whole viewport */
+    background-position: static;  /* Center the image */
+    background-repeat: no-repeat; /* Don’t repeat the image */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px; /* Maximum width for large screens */
+    margin: 0 auto;    /* Center horizontally */
+	background-color: var(--dark-grey);
+}
+
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--dark-green);
+}
+
+.nav-bar li {
+  float: left;
+}
+
+.nav-bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-bar li a:hover {
+  background-color: var(--dark-grey);
+  color: var(--light-green);
+}
+
+/*remove before release*/
+.notice {
+    background: repeating-linear-gradient(
+        45deg,            /* diagonal stripes */
+        #FFD700,          /* yellow stripe */
+        #FFD700 20px,
+        #000000 20px,     /* black stripe */
+        #000000 40px
+    );
+    color: white;          /* black text */
+    text-align: center;
+    padding: 30px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.notice p {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Header */
+header {
+    background-color: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Introduction Section */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: var(--white);
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--light-green);
+}
+
+.intro-text {
+    flex: 1;
+	padding-left: 20px;
+	padding-rght: 20px;
+}
+
+.intro-text h2 {
+    color: var(--light-green);
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* makes the whole block clickable */
+}
+
+.projects {
+    padding: 40px 20px;
+    background-color: var(--dark-grey);
+}
+
+.projects h2 {
+    text-align: center;
+    color: var(--dark-green);
+    margin-bottom: 30px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project h3 {
+    color: var(--dark-green);
+    margin-bottom: 10px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill {
+    background-color: var(--light-green);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none; /* removes underline */
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline; /* adds underline on hover */
+}
+
+/* In projects */
+/* Info/content section */
+.project-content {
+	width: 100%;
+	overflow: auto;
+}
+
+.project-content div {
+	width: 50%;
+	float: left;
+}
+
+.project-image {
+	width: 100%;
+	border: 1px solid black;
+}
+
+.project-desc-col {
+	padding: 10px;
+}
+
+.code-section {
+	margin: 10px; 
+	padding: 10px;
+	background: black;
+	color: white;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.code-section h3 {
+	margin: 0px; 
+	padding: 10px;
+	background: #222222;
+}
+.code-section p {
+	padding: 10px;
+}
+
+.pdf-embed {
+	padding: 10px; 
+	width: 100%;
+	height: 500px;
+}
