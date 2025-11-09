@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project 5</title>
+		<link rel="stylesheet" href="/index.css">
+	</head>
+	<body>
+	<div class="container">
+		<!-- Nav bar --> 
+		<ul class="nav-bar">
+			<li><a href="/index.html">Home</a></li>
+			<li><a href="/index.html#projects-jump-point">All Projects</a></li>
+		</ul>
+	
+		<!-- Header -->
+		<header>
+			<h1>GPS/GNSS Navigation System</h1>
+		</header>
+		
+		<!-- Notice section remove before full release-->
+		<section class="notice">
+			<p>Notice this website is under construction still. Please be patient, more info on this awesome engineer is coming!</p>
+		</section>
+		
+		<!-- Introduction Section -->
+		<section class="intro">
+			<div class="intro-text">
+				<h2>Project Overview</h2>
+				<ul>
+					<li> Engineered and implemented a scalable GPS navigation system for on-site materials distribution.
+					<li> Maintained a goal of cost reduction through automation and the elimination of surveying costs
+					<li>Developed integrated front-end navigation software and GPS hardware.
+					<li> Produced detailed technical documentation and presentations for leadership approval
+				</ul>
+				<p><b>Note: since this was done as an internship, the deliverables are property of SOLV Energy. As such, what I can show is limited. Hopefully, I can still convey the accomplishments of this project and what it taught me. 
+				</b></p>
+			</div>
+		</section>
+		
+		<!-- Project Info Area -->
+		<div class="project-content">
+			<div>
+				<p> 1. Hardware flow diagram</p>
+				<img src="/files/project5_1.png" alt="Image not found" onerror="this.src='/files/missing.jpg';" class="project-image">
+				<p> 2. Software flow diagram (navigation aid)</p>
+				<img src="/files/project5_2.png" alt="Image not found" onerror="this.src='/files/missing.jpg';" class="project-image">
+				<p> 3. Telehander Equipped with GPS package (ontop of cab). </p>
+				<img src="/files/project5_3.png" alt="Image not found" onerror="this.src='/files/missing.jpg';" class="project-image">
+			</div>
+			<div class="project-desc-col">
+				<h3>High Level Description</h3>
+				<p>
+				This system was my solo project during my internship at SOLV Energy and effectively allows the elimination of survey feathers (physical markers placed by a survey team) by creating a digital navigation tool to guide distribution equipment operators to a location. The intended accuracy of this system was to be within 2ft of the true location but we had significantly lower average drop deviations. The system involved a base station, a modular rover kit, and a digital navigation aid. We also prototyped a system to record when and where something is distributed. 
+				</p>
+				<h3>Core Functions and Operations</h3>
+				<p>
+				This system has 3 primary operations. They are as follows:<br>
+				<b>The base station.</b> This system is independently powered (in our case with a solar panel) and sits at a known location. This location can be quickly updated using a simple update script that flashes it directly to the base station's non-volitile memory. The base station has a single antenna that repeatedly gets it's location and compares it against it's known coordinates. It then takes the difference and transmits it via a radio module to the rover.<br>
+				<b>The rover.</b> The rover is the portion of this system that is mounted to the vehicle and moves around. The rover has 2 antennas that repeatedly get their respected locations. The rover also takes in the broadcast correction information provided by the base station. By subtracting the correction value from primary antenna's location we get a more accurate coordinate value. Also, by subtracting these locations we get a directional vector telling us which way the vehicle is facing with a few degrees of accuracy. Additionally, using the height information of the two antennas allows us to differentiate for the pitch of the vehicle (in the front to back direction only). The rover then outputs the corrected coordinates, heading and pitch.<br>
+				<b>The navigation aid.</b> This system is basically just a computer that takes an input from the rover, processes the information and visually displays it to the user using a custom tailored mapping software. The operator is also given a number of capabilities including selecting a to-point navation line, multi-point active selection, automatic distribution recording and reactive optimization options. 
+				</p>
+				<h3>Skills Learned</h3>
+				<ul style="list-style-type: none;">
+					<li>GPS/GNSS
+					<li>Hardware/Software communication
+					<li>RTK correction
+					<li>Base station design
+					<li>Prototyping
+					<li>Weatherproofing Electronics
+				</ul>
+			</div>
+		</div>
+		<div class="code-section">
+			<code> 
+				<h3>No Code</h3>
+			</code>
+			<pre><code>
+Unable to share the code due to product being made for company. Project overview approved for portfolio.
+</code></pre>
+		</div>
+	</div>
+	</body>
+</html>

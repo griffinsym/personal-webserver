@@ -18,9 +18,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* background-color: var(--light-green); */
 	background-image: url("files/background.jpg");
-    background-size: cover;       /* Make it cover the whole viewport */
-    background-position: static;  /* Center the image */
-    background-repeat: no-repeat; /* Don’t repeat the image */
+    background-repeat: repeat-y; /* Don’t repeat the image */
     color: #333;
     line-height: 1.6;
 }
