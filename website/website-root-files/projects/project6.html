@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project 6</title>
+		<link rel="stylesheet" href="/index.css">
+	</head>
+	<body>
+	<div class="container">
+		<!-- Nav bar --> 
+		<ul class="nav-bar">
+			<li><a href="/index.html">Home</a></li>
+			<li><a href="/index.html#projects-jump-point">All Projects</a></li>
+		</ul>
+	
+		<!-- Header -->
+		<header>
+			<h1>Diode Modeling and Rectifier Design</h1>
+		</header>
+		
+		<!-- Notice section remove before full release-->
+		<section class="notice">
+			<p>Notice this website is under construction still. Please be patient, more info on this awesome engineer is coming!</p>
+		</section>
+		
+		<!-- Introduction Section -->
+		<section class="intro">
+			<div class="intro-text">
+				<h2>Project Overview</h2>
+				<ul>
+					<li>Designed and simulated diode-based rectifier circuits using LTSpice to model DC behavior and AC rectification.
+					<li>Selected and justified a commercial diode from DigiKey based on forward voltage, current rating, and cost; verified datasheet specifications.
+					<li>Performed DC sweep and transient simulations to extract diode I–V characteristics and validate analytical calculations.
+					<li>Designed half-wave and full-wave rectifiers with filter capacitors to achieve ≤200 mV ripple voltage across a 10 kΩ load.
+					<li>Compared analytical and SPICE results, documented peak/valley voltages, ripple voltage, and diode current performance within rated limits.
+				</ul>
+			</div>
+		</section>
+		
+		<!-- Project Info Area -->
+		<div class="project-content">
+			<div>
+				<p>Half Wave Retifier Designed in LTSpice</p>
+				<img src="/files/project6_2.png" alt="Image not found" onerror="this.src='/files/missing.jpg';" class="project-image">
+				<p>Full Wave Retifier Designed in LTSpice</p>
+				<img src="/files/project6_3.png" alt="Image not found" onerror="this.src='/files/missing.jpg';" class="project-image">
+			</div>
+			<div class="project-desc-col">
+				<h3>Parts 1&2 - Diode Selection and DC Analysis</h3>
+				<p>
+				The 1N914 silicon diode from onsemi was chosen for its low cost, availability, and suitable forward voltage range of 0.62–0.72 V. A DC sweep from -12 V to +12 V in LTSpice showed current conduction beginning near 0.64 V, matching the datasheet values. The diode safely operates within the ±12 V range, making it ideal for the rectifier circuits used later in the project.
+				</p>
+				<h3>Part 3 - Half Wave Rectifier</h3>
+				<p>
+				This system has 3 primary operations. They are as follows:<br>
+				A half-wave rectifier using a 12 V, 60 Hz AC source and 10 kΩ load was analyzed. Theoretical peak output was 11.36 V with a current of 1.136 mA, while simulation results were 11.397 V and 1.139 mA. The 0.3% difference confirms strong agreement between hand calculations and SPICE results.
+				</p>
+				<h3>Part 4 - Full Wave Rectifier</h3>
+				<p>
+				A full-wave bridge rectifier was tested with the same source and load. Calculations predicted a 10.72 V peak and 1.072 mA current, while simulation gave 10.80 V and 1.080 mA. The circuit provided a smoother output than the half-wave design and showed less than 1% error from theory.
+				</p>
+				<h3>Part 5 - Filtered Rectifiers</h3>
+				<p>
+				Filter capacitors were added to both rectifiers to reduce ripple below 200 mV. The half-wave circuit used a 100 µF capacitor with 0.187 V ripple, and the full-wave circuit used 50 µF with 0.197 V ripple. Both circuits stayed within the 1 A surge current limit, with the full-wave design producing a steadier DC output.
+				</p>
+				<h3>Skills Learned</h3>
+				<ul style="list-style-type: none;">
+					<li>LTSpice Simulation 
+					<li>Diode Modeling
+					<li>AC/DC Conversion
+					<li>Rectifier Design
+					<li>Filter Capacitor Sizing 
+					<li>Circuit Analysis
+					<li>Datasheet Interpretation  
+					<li>Component Selection  
+				</ul>
+			</div>
+		</div>
+		<div class="code-section">
+			<code> 
+				<h3>LTSpice Project.asc</h3>
+			</code>
+			<pre><code>Version 4
+SHEET 1 880 680
+WIRE 272 80 96 80
+WIRE 496 80 272 80
+WIRE 416 128 400 128
+WIRE 96 160 96 80
+WIRE 272 176 272 144
+WIRE 336 176 336 128
+WIRE 336 176 272 176
+WIRE 416 176 416 128
+WIRE 496 176 496 144
+WIRE 496 176 416 176
+WIRE 560 176 496 176
+WIRE 272 192 272 176
+WIRE 496 192 496 176
+WIRE 336 208 336 176
+WIRE 416 208 416 176
+WIRE 96 256 96 240
+WIRE 272 256 96 256
+WIRE 496 256 272 256
+FLAG 96 256 0
+FLAG 560 176 0
+SYMBOL voltage 96 144 R0
+WINDOW 123 0 0 Left 0
+WINDOW 39 0 0 Left 0
+SYMATTR InstName V1
+SYMATTR Value SINE(0 5 60)
+SYMBOL diode 256 80 R0
+SYMATTR InstName D1
+SYMBOL diode 480 192 R0
+SYMATTR InstName D2
+SYMBOL diode 512 144 R180
+WINDOW 0 24 64 Left 2
+WINDOW 3 24 0 Left 2
+SYMATTR InstName D3
+SYMBOL diode 288 256 R180
+WINDOW 0 24 64 Left 2
+WINDOW 3 24 0 Left 2
+SYMATTR InstName D4
+SYMBOL cap 400 112 R90
+WINDOW 0 0 32 VBottom 2
+WINDOW 3 32 32 VTop 2
+SYMATTR InstName C1
+SYMATTR Value 10µf
+SYMBOL res 432 192 R90
+WINDOW 0 0 56 VBottom 2
+WINDOW 3 32 56 VTop 2
+SYMATTR InstName R1
+SYMATTR Value 10k
+TEXT 56 280 Left 2 !.tran 1</code></pre>
+		</div>
+	</div>
+	</body>
+</html>
