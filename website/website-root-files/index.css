@@ -137,6 +137,20 @@ header p {
     margin-bottom: 10px;
 }
 
+.about-me-links {
+    color: var(--dark-green);
+}
+
+.about-me-links a {
+    color: var(--dark-green);
+    text-decoration: none; /* removes underline */
+}
+
+.about-me-links a:hover {
+    color: var(--light-green);
+    text-decoration: underline; /* adds underline on hover */
+}
+
 /* Projects Section */
 .project-link {
     text-decoration: none;
